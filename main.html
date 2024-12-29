@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <style>
+      .Parentdiv {
+        min-height: 100vh;
+        background-image: url("/src/bgimg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+    <title>trail of Quizify</title>
+  </head>
+  <body
+    id="mainpage"
+    class="relative flex flex-row-reverse w-full overflow-hidden h-screen"
+  >
+    <div class="Parentdiv absolute backdrop-blur-[4px] h-full w-[100%]">
+      <!-- navbar -->
+      <nav class="w-[100%] h-14 pt-[10px] flex justify-around text-white">
+        <header class="pl-[5%] font-bold w-[60%] text-3xl">Quizify.</header>
+        <ul class="flex pl-20 gap-x-[10%] w-[35%]">
+          <a href="#" class="text-pink-500 text-lg">Home</a>
+          <a href="#" class="hover:text-pink-400 text-lg">About</a>
+          <a href="#" class="hover:text-pink-400 text-lg">Services</a>
+          <a href="#" class="hover:text-pink-400 text-lg">Contact</a>
+        </ul>
+      </nav>
+
+      <!-- main div  -->
+      <div class="main-div flex justify-center flex-col h-[90vh] items-center">
+        <div
+          class="intro-div flex justify-center flex-col h-[90vh] items-center"
+        >
+          <header class="font-bold text-5xl text-white mb-4">
+            Welcome to Quizify
+          </header>
+          <p class="text-white w-[80vh] text-center mb-6 text-lg">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad facilis
+            expedita ut iusto sit quidem harum, saepe, reiciendis nesciunt
+            accusamus dolorem quod deserunt! Magnam at labore.
+          </p>
+          <button
+            class="startbtn bg-pink-600 text-xl w-[30%] h-[8%] text-white border-white hover:bg-pink-700 border-2 rounded-md shadow-[0_0_15px_3px_rgba(219,39,119,0.8)] transition duration-300"
+          >
+            Start Quiz
+          </button>
+        </div>
+
+        <div
+          class="quiz-guide hidden bg-white rounded-lg shadow-xl p-6 max-w-lg w-full opacity-0 scale-90 transition-all duration-500 ease-out"
+        >
+          <h1 class="text-5xl font-bold text-pink-600 mb-6 text-start">
+            Quiz Guide
+          </h1>
+          <ol class="text-gray-700 space-y-3 mb-6 text-lg">
+            <li>1. Lorem ipsum dolor sit amet consectetur.</li>
+            <li>2. Lorem ipsum dolor sit amet consectetur adipiscing.</li>
+            <li>3. Lorem ipsum dolor sit amet cons.</li>
+            <li>4. Lorem ipsum dolor sit amet consectetur adipiscing.</li>
+            <li>5. Lorem ipsum dolor sit amet consectetur adipiscing.</li>
+          </ol>
+          <hr class="border-gray-400 my-6" />
+          <div class="flex justify-between">
+            <button
+              class="exitbtn bg-white text-pink-600 border-2 border-pink-600 py-3 px-6 rounded-lg font-semibold hover:text-white hover:bg-pink-600 transition duration-200 delay-100 text-lg"
+            >
+              Exit Quiz
+            </button>
+            <button
+              class="continue bg-pink-600 border-2 border-white text-white py-3 px-6 rounded-lg font-semibold hover:bg-pink-700 transition duration-300 delay-200 text-lg"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main quiz page -->
+    <div
+      class="quizdiv hidden w-full flex justify-center items-center bg-slate-950 h-full transform -translate-x-full transition-transform duration-700 ease-out"
+    >
+      <!-- transform -translate-x-full transition-transform duration-500 ease-out -->
+      <div
+        id="operationdiv"
+        class="w-[420px] h-max bg-slate-950 border-2 border-pink-500 text-white rounded-lg shadow-lg p-6 opacity-0 scale-90 transition-all duration-500 ease-in-out"
+      >
+        <!-- Header Section -->
+        <h1
+          class="text-4xl h-14 font-bold text-white bg-gradient-to-r from-transparent via-pink-600 to-transparent text-center pt-1"
+        >
+          Quizify
+        </h1>
+        <div class="text-center flex justify-between mb-4">
+          <p class="text-base mt-6">Quiz Website by js</p>
+          <p
+            class="mt-4 bg-pink-600 px-5 py-2 rounded-md inline-block font-semibold text-lg"
+          >
+            Score: <span id="scorespan" class="font-bold">0</span> / 5
+          </p>
+        </div>
+        <hr class="border-pink-500 border mb-3" />
+        <div class="relative">
+          <div class="majordiv z-0"></div>
+          <button
+            id="nextbtn"
+            disabled
+            class="bg-gray-700 text-gray-400 absolute bottom-[-10px] right-0 px-5 py-2 rounded-lg cursor-pointer text-base font-semibold"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <!-- result -->
+      <div
+        id="resultdiv"
+        class="resultdiv hidden bg-slate-950 text-white p-8 rounded-xl h-[72%] shadow-lg border-2 border-pink-500 max-w-md w-full opacity-0 scale-90 transition-all duration-500 ease-in-out"
+      >
+        <!-- Title -->
+        <h1 class="text-5xl font-extrabold text-center mb-8">Quiz Result !</h1>
+
+        <!-- Progress Circle -->
+        <div
+          class="relative flex justify-center items-center w-56 h-56 mx-auto"
+        >
+          <div
+            class="progressbar absolute inset-0 bg-transparent rounded-full"
+            style="
+              background: conic-gradient(
+                rgb(219 39 119) 0% 0%,
+                #374151 0% 100%
+              );
+            "
+          ></div>
+
+          <!-- Inner Circle to Mask -->
+          <div class="absolute inset-4 bg-slate-950 rounded-full"></div>
+
+          <!-- Percentage -->
+          <div
+            class="percentagetext absolute text-center text-5xl font-semibold"
+          >
+            0%
+          </div>
+        </div>
+
+        <!-- Score Text -->
+        <p class="text-center text-2xl font-semibold mt-8">
+          Your Score
+          <span class="font-extrabold">
+            <span class="resultspan">0</span> out of 5</span
+          >
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-6 mt-8">
+          <button
+            class="tryagain bg-pink-600 hover:bg-pink-700 text-white font-bold py-[10px] px-7 rounded-lg text-lg"
+          >
+            Try Again
+          </button>
+          <button
+            class="gohome border-2 border-pink-500 text-pink-500 hover:bg-pink-700 hover:text-white font-bold py-[10px] px-5 rounded-lg text-lg transition delay-50"
+          >
+            Go To Home
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- garbage just for helping -->
+    <!-- <div
+      class="space-y-4 hidden mt-6 bg-gray-700 text-gray-400 px-5 py-2 rounded-lg cursor-pointer text-base font-semibold flex items-center justify-between text-base text-white font-bold pl-2"
+    ></div> -->
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loginpage of Quizify</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "DPQWyNq5oopi77Ze2",
+        });
+      })();
+    </script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div
+    id="email-verification"
+      class=" max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl shadow-[0_0_7px_1px_rgba(0,0,0,0.6)]"
+    >
+    <header class="mb-8">
+      <h1 class="text-2xl font-bold mb-1">Enter Your Details</h1>
+      <p class="text-[15px] text-slate-500">
+        Enter your name and email for otp verification.
+      </p>
+    </header>
+    <!-- Form for Name and dipak sheddge Email -->
+    <form  id="user-form">
+      <div class="mb-4 ">
+        <label for="name" class="block text-left font-medium text-slate-700"
+          >Name</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-400"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-left font-medium text-slate-700"
+          >Email</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-400"
+          required
+        />
+      </div>
+      <!-- Send OTP Button -->
+      <div class="max-w-[260px] mx-auto mt-5 mb-5">
+        <button
+          type="button"
+          id="send-otp-btn"
+          class="w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 focus:ring-2 focus:ring-pink-300"
+        >
+          Send OTP
+        </button>
+      </div>
+    </div>
+    
+
+    <div
+    id="otp-verification"
+      class="hidden max-w-md  mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl shadow-[0_0_7px_1px_rgba(0,0,0,0.6)]"
+    >
+      <!-- OTP verification part -->
+      <div id="otp-form" >
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100"
+            maxlength="1"
+            pattern="\d*"
+          />
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100"
+            maxlength="1"
+            pattern="\d*"
+          />
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100"
+            maxlength="1"
+            pattern="\d*"
+          />
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100"
+            maxlength="1"
+            pattern="\d*"
+          />
+        </div>
+
+        <!-- Verify OTP Button -->
+        <div class="max-w-[260px] mx-auto">
+          <button
+            type="submit"
+            id="verify-otp-btn"
+            class="w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 focus:ring-2 focus:ring-pink-300"
+          >
+            Verify OTP
+          </button>
+        </div>
+      </form>
+      
+      <div class="text-sm text-slate-500 mt-4">
+        Didn't receive code?
+        enter a valid email
+        <a href="#" class="font-medium text-pink-700 hover:text-pink-800"
+          >go back</a
+        >
+      </div>
+    </div>  
+
+   <script src="index.js"></script>
+  </body>
+</html>
