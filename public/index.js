@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // alert("successful");
       console.log("done");
 
-      window.location.href = "./main.html";
+      window.location.href = "public/main.html";
     } else {
       alert("Please enter a complete OTP.");
     }
