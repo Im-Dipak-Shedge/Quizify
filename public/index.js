@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // alert("successful");
       console.log("done");
 
-      window.location.href = "public/main.html";
+      window.location.href = "https://im-dipak-shedge.github.io/Quizify/public/main.html";
     } else {
       alert("Please enter a complete OTP.");
     }
